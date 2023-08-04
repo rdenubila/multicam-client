@@ -29,7 +29,7 @@ function Camera() {
             server.connectToServer(stream);
             videoLive.current.srcObject = stream
 
-            mediaRecorder = new MediaRecorder(stream, { mimeType: 'video/webm' })
+            mediaRecorder = new MediaRecorder(stream, { mimeType: CameraService.supportedType() })
             mediaRecorder.addEventListener('dataavailable', async event => {
                 server.sendBlob(event.data)
             })
