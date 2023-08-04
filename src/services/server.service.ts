@@ -19,6 +19,10 @@ export default class ServerService {
         this._peer = new Peer();
     }
 
+    get call() {
+        return this._call
+    }
+
     public attach(observer: Observer): void {
         const isExist = this._observers.includes(observer);
         if (isExist) {
